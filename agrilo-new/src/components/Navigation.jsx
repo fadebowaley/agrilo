@@ -22,7 +22,7 @@ const menuItems = [
     children: [
       { label: "About us", href: "/about" },
       { label: "The Leadership", href: "/team" },
-      { label: "Our Team", href: "/team" },
+      { label: "Our Team", href: "/teamMembers" },
     ],
   },
   {
@@ -36,7 +36,7 @@ const menuItems = [
     label: "NEWS AND MEDIA",
     children: [{ label: "Blogs", href: "/blogs" }],
   },
-  { label: "CONTACT US", href: "/contact" },
+  { label: "CONTACT US", href: "/Contact" },
   { label: "BOOK CONSULTATION", href: "/book" },
 ];
 
@@ -96,7 +96,7 @@ const Navigation = () => {
 
         <div>
           <Link
-            to="/contact"
+            to="/Contact"
             className="hidden md:flex gap-2 items-center justify-center bg-green-600 text-white font-semibold px-5 py-3 rounded-full text-sm border border-transparent hover:text-green-700 hover:bg-white hover:border-green-600 transition-colors duration-300"
           >
             Contact us
