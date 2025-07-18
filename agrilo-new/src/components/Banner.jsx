@@ -3,7 +3,7 @@ import {Phone} from 'lucide-react';
 const Banner = () => {
   return (
     <section className='bg-[#F2F2F2] w-full px-10'>
-        <div className="flex justify-center bg-green-500 text-white pb-4">
+        <div className="flex justify-center bg-green-600 text-white pb-4">
         <div className='w-1/2 flex'>
             <img
             src="/banner.jpg"
