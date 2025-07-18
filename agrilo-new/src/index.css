@@ -3,3 +3,9 @@
 body {
   @apply font-[Roboto];
 }
+#form #span{
+    visibility:hidden;
+}
+#form:hover #span{
+    visibility:visible;
+}
