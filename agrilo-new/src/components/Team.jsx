@@ -9,7 +9,7 @@ const Team = () => {
       linkedin: "#",
       facebook: "#",
       twitter: "#",
-      img: "https://via.placeholder.com/150" // Placeholder image URL
+      img: "/tolukuku.png" // Placeholder image URL
     },
     {
       name: "Richard Ogundele",
@@ -17,7 +17,7 @@ const Team = () => {
       linkedin: "#",
       facebook: "#",
       twitter: "#",
-      img: "https://via.placeholder.com/150" // Placeholder image URL
+      img: "/richard.png" // Placeholder image URL
     },
     {
       name: "Abisola Grace Ilufoye",
@@ -25,7 +25,7 @@ const Team = () => {
       linkedin: "#",
       facebook: "#",
       twitter: "#", 
-      img: "https://via.placeholder.com/150" // Placeholder image URL
+      img: "/abisola.jpeg" // Placeholder image URL
     },
     {
       name: "John Lampam",
@@ -33,7 +33,7 @@ const Team = () => {
       linkedin: "#",
       facebook: "#",
       twitter: "#",
-      img: "https://via.placeholder.com/150" // Placeholder image URL
+      img: "/john.png" // Placeholder image URL
     }
   ];
 

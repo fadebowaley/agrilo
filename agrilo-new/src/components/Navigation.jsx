@@ -50,7 +50,7 @@ const Navigation = () => {
   };
 
   return (
-    <header className="w-full bg-white shadow-md">
+    <header className="w-full bg-white shadow-md overflow-visible">
       {/* Top Bar */}
       <div className="bg-[#f5f5f5] text-sm text-gray-700 px-10">
         <div className="container mx-auto flex justify-between items-center px-4 py-2">
@@ -106,7 +106,8 @@ const Navigation = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="border-t-[0.5px] border-b-[0.5px] border-gray-300 bg-white">
+      <div className="sticky top-0 z-50 bg-white shadow-md border-y border-gray-300">
+        <nav>
         <div className="container mx-auto px-4">
           <ul
             className={`flex flex-col md:flex-row md:items-center md:justify-center text-sm font-semibold text-black ${
@@ -166,6 +167,8 @@ const Navigation = () => {
           </ul>
         </div>
       </nav>
+      </div>
+      
     </header>
   );
 };
