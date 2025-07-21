@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaLinkedin, FaFacebookF,FaTwitter } from 'react-icons/fa';
 
 const Team = () => {
@@ -100,9 +101,12 @@ const Team = () => {
         <div
             onMouseEnter={() => console.log('Mouse Entered')}
         >
-            <button className="mt-4 px-8 py-3 bg-green-500 hover: text-white font-semibold rounded-full hover:text-white transition-colors duration-300">
+            <Link 
+            to='/leadership'
+            className="mt-4 px-8 py-3 bg-white border border-green-500 hover:bg-green-500 hover:text-white font-semibold rounded-full hover:text-white transition-colors duration-300"
+            >
                 SEE MORE
-            </button>
+            </Link>
         </div>
         
       </div>
