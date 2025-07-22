@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 const blogPosts = [
   {
@@ -108,10 +109,13 @@ const BlogSection = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+        <div className="mt-12 mb-12 text-center">
+          <Link 
+            to='/blogs'
+            className="bg-white text-black border border-green-500 hover:bg-green-600 hover:text-white px-6 py-3 rounded-full font-medium transition-colors"
+          >
             VIEW ALL
-          </button>
+          </Link>
         </div>
       </div>
     </section>
