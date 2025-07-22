@@ -108,76 +108,76 @@ const Navigation = () => {
       {/* Navigation */}
       <div className="sticky top-0 z-50 bg-white shadow-md border-y border-gray-300">
         <nav>
-  <div className="container mx-auto px-4">
-    <ul
-      className={`flex flex-col md:flex-row md:items-center md:justify-center text-sm font-semibold text-black ${
-        isMobileMenuOpen ? "block bg-green-50 px-4 rounded-b-lg shadow-md" : "hidden"
-      } md:flex gap-2 md:gap-0`}
-    >
-      {menuItems.map((item) => {
-        const isActive = item.href && location.pathname === item.href;
-        const isOpen = openDropdown === item.label;
+          <div className="container mx-auto px-4">
+            <ul
+              className={`flex flex-col md:flex-row md:items-center md:justify-center text-sm font-semibold text-black ${
+                isMobileMenuOpen ? "block bg-green-50 px-4 rounded-b-lg shadow-md" : "hidden"
+              } md:flex gap-2 md:gap-0`}
+            >
+              {menuItems.map((item) => {
+                const isActive = item.href && location.pathname === item.href;
+                const isOpen = openDropdown === item.label;
 
-        return (
-          <li
-            key={item.label}
-            onMouseLeave={() => {
-              if (window.innerWidth >= 768) setOpenDropdown(null); // Close on mouse leave (desktop)
-            }}
-            className={`relative ${
-              isMobileMenuOpen
-                ? "border-b border-gray-200 py-3 hover:text-green-500"
-                : "md:border-l md:border-r border-gray-200 md:px-6 py-2 md:py-4"
-            } ${isActive ? "border-t-4 border-t-green-600 text-green-600" : ""}
-            hover:border-t-green-600 hover:text-green-600 transition duration-400 ease-in-out`}
-          >
-            {item.children ? (
-              <>
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setOpenDropdown((prev) =>
-                      prev === item.label ? null : item.label
-                    );
-                  }}
-                  className="flex items-center gap-1 w-full md:w-auto"
-                >
-                  {item.label}
-                  {isOpen ? (
-                    <ChevronUp className="w-4 h-4" />
-                  ) : (
-                    <ChevronDown className="w-4 h-4" />
-                  )}
-                </button>
+                return (
+                  <li
+                    key={item.label}
+                    onMouseLeave={() => {
+                      if (window.innerWidth >= 768) setOpenDropdown(null); // Close on mouse leave (desktop)
+                    }}
+                    className={`relative ${
+                      isMobileMenuOpen
+                        ? "border-b border-gray-200 py-3 hover:text-green-500"
+                        : "md:border-l md:border-r border-gray-200 md:px-6 py-2 md:py-4"
+                    } ${isActive ? "border-t-4 border-t-green-600 text-green-600" : ""}
+                    hover:border-t-green-600 hover:text-green-600 transition duration-400 ease-in-out`}
+                  >
+                    {item.children ? (
+                      <>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setOpenDropdown((prev) =>
+                              prev === item.label ? null : item.label
+                            );
+                          }}
+                          className="flex items-center gap-1 w-full md:w-auto"
+                        >
+                          {item.label}
+                          {isOpen ? (
+                            <ChevronUp className="w-4 h-4" />
+                          ) : (
+                            <ChevronDown className="w-4 h-4" />
+                          )}
+                        </button>
 
-                {/* Dropdown */}
-                <ul
-                  className={`absolute top-10 left-0 mt-2 md:bg-green-600 md:shadow-lg md:min-w-[200px] z-20 rounded-md overflow-hidden transition-all duration-200 ${
-                    isOpen ? "block" : "hidden"
-                  }`}
-                >
-                  {item.children.map((child) => (
-                    <li key={child.label}>
-                      <Link
-                        to={child.href}
-                        className="block px-4 py-3 text-sm text-black hover:bg-green-100 md:text-white md:hover:bg-green-500"
-                      >
-                        {child.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            ) : (
-              <Link to={item.href}>{item.label}</Link>
-            )}
-          </li>
-        );
-      })}
-    </ul>
-  </div>
-</nav>
-
+                        {/* Dropdown */}
+                        <ul
+                          className={`mt-2 rounded-md overflow-hidden transition-all duration-200 z-20
+                            ${isOpen ? "block" : "hidden"}
+                            ${isMobileMenuOpen ? "relative bg-green-50" : "absolute left-0 top-10 md:bg-green-600 md:shadow-lg md:min-w-[200px]"}
+                          `} 
+                        >
+                          {item.children.map((child) => (
+                            <li key={child.label}>
+                              <Link
+                                to={child.href}
+                                className="block px-4 py-3 text-sm text-black hover:bg-green-100 md:text-white md:hover:bg-green-500"
+                              >
+                                {child.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    ) : (
+                      <Link to={item.href}>{item.label}</Link>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </nav>
       </div>
       
     </header>
