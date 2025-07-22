@@ -108,65 +108,76 @@ const Navigation = () => {
       {/* Navigation */}
       <div className="sticky top-0 z-50 bg-white shadow-md border-y border-gray-300">
         <nav>
-        <div className="container mx-auto px-4">
-          <ul
-            className={`flex flex-col md:flex-row md:items-center md:justify-center text-sm font-semibold text-black ${
-              isMobileMenuOpen ? "block bg-green-50 px-4 rounded-b-lg shadow-md" : "hidden"
-            } md:flex gap-2 md:gap-0`}
-          >
-            {menuItems.map((item) => {
-              const isActive = item.href && location.pathname === item.href;
+  <div className="container mx-auto px-4">
+    <ul
+      className={`flex flex-col md:flex-row md:items-center md:justify-center text-sm font-semibold text-black ${
+        isMobileMenuOpen ? "block bg-green-50 px-4 rounded-b-lg shadow-md" : "hidden"
+      } md:flex gap-2 md:gap-0`}
+    >
+      {menuItems.map((item) => {
+        const isActive = item.href && location.pathname === item.href;
+        const isOpen = openDropdown === item.label;
 
-              return (
-                <li
-                  key={item.label}
-                  className={`relative group ${
-                    isMobileMenuOpen
-                      ? "border-b border-gray-200 py-3 hover:text-green-500"
-                      : "md:border-l md:border-r border-gray-200 md:px-6 py-2 md:py-4"
-                  } ${
-                    isActive ? "border-t-4 border-t-green-600 text-green-600" : ""
-                  } hover:border-t-green-600 hover:text-green-600 transition duration-400 ease-in-out`}
+        return (
+          <li
+            key={item.label}
+            onMouseLeave={() => {
+              if (window.innerWidth >= 768) setOpenDropdown(null); // Close on mouse leave (desktop)
+            }}
+            className={`relative ${
+              isMobileMenuOpen
+                ? "border-b border-gray-200 py-3 hover:text-green-500"
+                : "md:border-l md:border-r border-gray-200 md:px-6 py-2 md:py-4"
+            } ${isActive ? "border-t-4 border-t-green-600 text-green-600" : ""}
+            hover:border-t-green-600 hover:text-green-600 transition duration-400 ease-in-out`}
+          >
+            {item.children ? (
+              <>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpenDropdown((prev) =>
+                      prev === item.label ? null : item.label
+                    );
+                  }}
+                  className="flex items-center gap-1 w-full md:w-auto"
                 >
-                  {item.children ? (
-                    <>
-                      <button
-                        onClick={() => toggleDropdown(item.label)}
-                        className="flex items-center gap-1 w-full md:w-auto"
-                      >
-                        {item.label}
-                        {openDropdown === item.label ? (
-                          <ChevronUp className="w-4 h-4" />
-                        ) : (
-                          <ChevronDown className="w-4 h-4" />
-                        )}
-                      </button>
-                      <ul
-                        className={`transition-all mt-3 duration-300 origin-top md:absolute md:top-full md:left-0 md:bg-green-400 md:shadow-md md:min-w-[200px] z-10 md:group-hover:scale-y-100 md:group-hover:opacity-100 md:group-hover:pointer-events-auto transform md:scale-y-0 md:opacity-0 md:pointer-events-none ${
-                          openDropdown === item.label ? "block" : "hidden"
-                        } md:block`}
-                      >
-                        {item.children.map((child) => (
-                          <li key={child.label}>
-                            <Link
-                              to={child.href}
-                              className="block px-4 py-3 text-sm hover:bg-green-100 md:hover:text-white md:text-white md:hover:bg-green-600"
-                            >
-                              {child.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </>
+                  {item.label}
+                  {isOpen ? (
+                    <ChevronUp className="w-4 h-4" />
                   ) : (
-                    <Link to={item.href}>{item.label}</Link>
+                    <ChevronDown className="w-4 h-4" />
                   )}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </nav>
+                </button>
+
+                {/* Dropdown */}
+                <ul
+                  className={`absolute top-10 left-0 mt-2 md:bg-green-600 md:shadow-lg md:min-w-[200px] z-20 rounded-md overflow-hidden transition-all duration-200 ${
+                    isOpen ? "block" : "hidden"
+                  }`}
+                >
+                  {item.children.map((child) => (
+                    <li key={child.label}>
+                      <Link
+                        to={child.href}
+                        className="block px-4 py-3 text-sm text-black hover:bg-green-100 md:text-white md:hover:bg-green-500"
+                      >
+                        {child.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <Link to={item.href}>{item.label}</Link>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</nav>
+
       </div>
       
     </header>

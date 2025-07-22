@@ -1,18 +1,17 @@
 import React from 'react';
-import AboutHero from '../components/AboutHero';
 import Footer from '../components/Footer';
 import WhyChooseUs from '../components/WhyChooseUs'
 import CompanyHistory from '../components/CompanyHistory';
 import Cta from '../components/Cta';
-import Navbar from '../components/Navigation';
+import Hero from "../components/Hero";
 import MainNav from "../components/MainNav";
 
 function About() {
   return (
     <>
     <MainNav />
-    <section className="about-page bg-[#f2f2f2] pb-30 mb-25">
-      <AboutHero />
+    <section className="about-page bg-[#f2f2f2]">
+      <Hero title="About Us" bgImage="" />
       <CompanyHistory />
     </section>
     <section className="">

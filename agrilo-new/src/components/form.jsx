@@ -52,7 +52,7 @@ function Form() {
           </form>
           <div
             id="form"
-            className="bg-[#1fa12e] w-[200px] h-[100px] rounded-[30px] flex items-start p-4  gap-[10px]"
+            className="bg-[#1fa12e] w-[200px] rounded-[30px] px-4 py-3 flex gap-[10px]"
           >
             <i className="fas fa-arrow-right text-2xl text-white" id="span"></i>
             <button

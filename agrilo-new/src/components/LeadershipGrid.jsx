@@ -8,13 +8,13 @@ import John from "../assets/john.png";
 function TeamGrid() {
   return (
     <>
-      <h1 className="font-bold text-3xl opacity-[0.7]">
+      {/* <h1 className="font-bold text-3xl opacity-[0.7]">
         Our Le
         <span className="border-b border-b-[4px] pb-[6px] border-b-[#1fa12e]">
           ade
         </span>
         rship
-      </h1>
+      </h1> */}
       <p className="mt-9 text-[20px] opacity-[0.7] font-['Roboto'] font-[500] text-center">
         We have dedicated team players who bring energy, ideas, and pride to
         their work. Each member of our team is a specialist in his or her field.

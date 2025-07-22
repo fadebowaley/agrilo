@@ -54,9 +54,7 @@ function TeamGrid() {
   };
 
   return (
-    <div className="flex flex-col items-center p-4 relative">
-      <p className="text-xl text-[#1fa12e] font-[400]">Our Dedicated Team</p>
-      <h3 className="font-bold text-3xl pt-2 mb-8">Hard Working People</h3>
+    <div className="flex flex-col items-center p-4 pt-15 relative">
 
       <button
         onClick={prev}

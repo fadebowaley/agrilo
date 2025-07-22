@@ -14,7 +14,7 @@ import Investments from './pages/Investments';
 import BookConsulation from './pages/Book-Consultation'
 import ScrollToTop from './components/ScrollToTop';
 import TeamGrid from './components/TeamGrid';
-// import RobertProfile from './components/RobertProfile';
+import Quote from './pages/Get-Quote';
 import TeamProfile from './components/TeamProfile';
 function Layout() {
   return (
@@ -22,12 +22,11 @@ function Layout() {
       <div className="">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="*" element={<NotFound />} />
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/about" element={<About />} />
           <Route path="/team" element={<TeamMembers />} />
-        <Route path="/team-grid" element={<TeamGrid />} />
-        <Route path="/team/:name" element={<TeamProfile />} />
+          <Route path="/team-grid" element={<TeamGrid />} />
+         <Route path="/team/:name" element={<TeamProfile />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/teamMembers" element={<TeamMembers />} />
           <Route path="/services" element={<Services />} />
@@ -36,6 +35,8 @@ function Layout() {
           <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/blogs" element={<Blog />} />
           <Route path="/book-consultation" element={<BookConsulation />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/get-quote" element={<Quote />} />
         </Routes>
       </div>
     </>

@@ -12,7 +12,7 @@ function Contact(){
        <MainNav />
         <Hero title="Contact us" bgImage="/images/hero/blog.jpg" />
        <Map />
-             <div className="md:gap-[30px] p-4 md:flex md:justify-center">
+        <div className="md:gap-[30px] p-4 md:flex md:justify-center">
 
        <Info />
        <Form />
