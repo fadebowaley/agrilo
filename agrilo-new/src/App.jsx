@@ -4,7 +4,7 @@ import NotFound from './pages/NotFound';
 import Home from './pages/Home';
 import About from './pages/About';
 import Leadership  from './pages/Leadership';
-import TeamMembers from './pages/TeamMembers';
+import TeamMembers from './pages/teamMembers';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
