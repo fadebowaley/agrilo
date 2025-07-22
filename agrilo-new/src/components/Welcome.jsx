@@ -4,13 +4,13 @@ import { FaDownload, FaBookOpen, FaPaperPlane } from 'react-icons/fa';
 const Welcome = () => {
   return (
     <section className="py-16 px-10 font-[Roboto] bg-[#F2F2F2]">
-      <div className="max-w-4xl mx-auto md:grid md:gap-14 md:grid-cols-2">
+      <div className="max-w-full mx-auto md:grid md:gap-14 md:grid-cols-3">
         {/* Hero Section */}
         <div className='flex flex-col w-full'>
             <img
                 src="/about.jpg"
                 alt="Agribusiness Hero"
-                className="w-full h-full object-contain rounded-lg mb-5"
+                className="w-full h-full object-contain rounded-xl mb-5"
             />
             <div className="flex flex-wrap justify-center gap-6 mb-16">
                 <button className="flex items-center gap-2 bg-[#71B16C] hover:bg-[#71C16d] text-white px-6 py-3 rounded-md transition-colors">
@@ -47,10 +47,9 @@ const Welcome = () => {
             
         </div>
         
-
         {/* Request a Quote Form */}
-        <div className='w-full col-span-2 flex items-center justify-center mb-12'>
-          <div className="max-w-2/3 mx-auto bg-gray-50 p-8 rounded-lg shadow-sm w-full">
+        <div className='w-full flex mb-12'>
+          <div className="w-full mx-auto bg-gray-50 p-8 rounded-lg shadow-sm">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Request a Quote</h2>
             
             <form className="space-y-4">
@@ -101,7 +100,7 @@ const Welcome = () => {
             </form>
           </div>
         </div>
-        
+
       </div>
     </section>
   );

@@ -9,7 +9,7 @@ const Project = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6 bg-green-600 text-white">
           {/* Projects Done */}
-          <div className="border-4 border-white flex space-x-5 px-4 py-10 text-center justify-center items-center text-xl">
+          <div className="border-1 border-white flex space-x-5 px-4 py-10 text-center justify-center items-center text-xl">
             <User className="w-15 h-15" />
             <div className="justify-center gap-2">
               <div className="text-4xl font-bold">445</div>
@@ -18,7 +18,7 @@ const Project = () => {
           </div>
           
           {/* Expert Advisory */}
-          <div className=" border-4 border-white flex space-x-5 px-6 py-10 justify-center items-center text-center text-xl">
+          <div className=" border-1 border-white flex space-x-5 px-6 py-10 justify-center items-center text-center text-xl">
             <Flower2 className="w-15 h-15" />
             <div className="justify-center gap-2">
               <div className="text-4xl font-bold">1023</div>
@@ -27,7 +27,7 @@ const Project = () => {
           </div>
           
           {/* Happy Clinics */}
-          <div className="border-4 border-white flex space-x-5 px-6 py-10 justify-center items-center text-center text-xl">
+          <div className="border-1 border-white flex space-x-5 px-6 py-10 justify-center items-center text-center text-xl">
             <Heart className="w-15 h-15" />
             <div className="justify-center gap-2">
               <div className="text-4xl font-bold">553</div>
@@ -35,7 +35,7 @@ const Project = () => {
             </div>
           </div>
           
-          <div className="border-4 border-white flex space-x-5 px-6 py-10 justify-center items-center text-center text-xl">
+          <div className="border-1 border-white flex space-x-5 px-6 py-10 justify-center items-center text-center text-xl">
             <Award className="w-15 h-15" />
             <div className="justify-center gap-2">
               <div className="text-4xl font-bold">7</div>
