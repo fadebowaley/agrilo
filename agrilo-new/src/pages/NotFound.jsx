@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import Navigation from "../components/Navigation";
+import MainNav from "../components/MainNav";
+import Footer from "../components/Footer";
 import { ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
   return (
     <>
-      <Navigation />
+      <MainNav />
     <div className="min-h-screen flex flex-col items-center justify-center bg-white text-center px-4">
       <h1 className="text-6xl font-bold text-gray-800 mb-4">404</h1>
       <p className="text-2xl text-gray-600 mb-6">Page Not Found</p>
@@ -20,6 +21,7 @@ export default function NotFound() {
         Back to Home
       </Link>
     </div>
+    <Footer />
     </>
     
   );

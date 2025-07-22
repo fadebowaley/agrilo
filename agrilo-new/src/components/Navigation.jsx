@@ -22,7 +22,7 @@ const menuItems = [
     children: [
       { label: "About us", href: "/about" },
       { label: "The Leadership", href: "/team" },
-      { label: "Our Team", href: "/team" },
+      { label: "Our Team", href: "/teamMembers" },
     ],
   },
   {
@@ -36,8 +36,8 @@ const menuItems = [
     label: "NEWS AND MEDIA",
     children: [{ label: "Blogs", href: "/blogs" }],
   },
-  { label: "CONTACT US", href: "/contact" },
-  { label: "BOOK CONSULTATION", href: "/book" },
+  { label: "CONTACT US", href: "/Contact" },
+  { label: "BOOK CONSULTATION", href: "/book-consultation" },
 ];
 
 const Navigation = () => {
@@ -50,7 +50,7 @@ const Navigation = () => {
   };
 
   return (
-    <header className="w-full bg-white shadow-md overflow-visible">
+    <header className="w-full bg-white border-3 border-white border-b-green-600 overflow-visible">
       {/* Top Bar */}
       <div className="bg-[#f5f5f5] text-sm text-gray-700 px-10">
         <div className="container mx-auto flex justify-between items-center px-4 py-2">
@@ -65,9 +65,9 @@ const Navigation = () => {
       </div>
 
       {/* Logo and Contact */}
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-3 px-10 gap-6 md:mb-3">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-1 px-10 gap-4 md:mb-3">
         <div className="flex items-center justify-between w-full md:w-auto">
-          <img src="/logo.png" alt="Logo" className="h-12" />
+          <img src="/logo.png" alt="Logo" className="h-10" />
           <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden text-gray-700">
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -96,7 +96,7 @@ const Navigation = () => {
 
         <div>
           <Link
-            to="/contact"
+            to="/Contact"
             className="hidden md:flex gap-2 items-center justify-center bg-green-600 text-white font-semibold px-5 py-3 rounded-full text-sm border border-transparent hover:text-green-700 hover:bg-white hover:border-green-600 transition-colors duration-300"
           >
             Contact us
@@ -142,7 +142,7 @@ const Navigation = () => {
                         )}
                       </button>
                       <ul
-                        className={`transition-all duration-300 origin-top md:absolute md:top-full md:left-0 md:bg-green-400 md:shadow-md md:min-w-[200px] z-10 md:group-hover:scale-y-100 md:group-hover:opacity-100 md:group-hover:pointer-events-auto transform md:scale-y-0 md:opacity-0 md:pointer-events-none ${
+                        className={`transition-all mt-3 duration-300 origin-top md:absolute md:top-full md:left-0 md:bg-green-400 md:shadow-md md:min-w-[200px] z-10 md:group-hover:scale-y-100 md:group-hover:opacity-100 md:group-hover:pointer-events-auto transform md:scale-y-0 md:opacity-0 md:pointer-events-none ${
                           openDropdown === item.label ? "block" : "hidden"
                         } md:block`}
                       >
