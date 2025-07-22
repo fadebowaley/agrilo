@@ -14,7 +14,7 @@ function Info() {
       <div className="border-b p-[24px] border-b-[#d6d6d6] gap-[40px] flex  items-center md:items-start justify-between ">
         <div>
           <h3 className="mb-[10px] text-left font-bold text-2xl">Email</h3>
-          <p className="text-[18px] font-[400] text-[#524b48] leading-7 text-justify">
+          <p className="text-[16px] font-[400] text-[#524b48] leading-7 text-justify">
             info@jmsfagribusiness.com
           </p>
         </div>

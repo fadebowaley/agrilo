@@ -4,6 +4,7 @@ import Form from '../components/form';
 import Info from '../components/info';
 import MainNav from '../components/MainNav';
 import Hero from '../components/Hero';
+
 import Footer from '../components/Footer';
 function Contact(){
     return (
