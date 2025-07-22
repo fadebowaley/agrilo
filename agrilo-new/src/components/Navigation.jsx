@@ -21,8 +21,8 @@ const menuItems = [
     label: "ABOUT US",
     children: [
       { label: "About us", href: "/about" },
-      { label: "The Leadership", href: "/team" },
-      { label: "Our Team", href: "/teamMembers" },
+      { label: "The Leadership", href: "/leadership" },
+      { label: "Our Team", href: "/team" },
     ],
   },
   {
