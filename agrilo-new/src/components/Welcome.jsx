@@ -1,8 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { FaDownload, FaBookOpen, FaPaperPlane } from 'react-icons/fa';
+import ReCAPTCHA from 'react-google-recaptcha'; // <-- Add this import
 
 const Welcome = () => {
+  // Optionally, handle reCAPTCHA value
+  const handleRecaptcha = (value) => {
+    // You can send this value to your backend for verification
+    console.log("reCAPTCHA value:", value);
+  };
+
   return (
     <section className="py-16 px-10 font-[Roboto] bg-[#F2F2F2]">
       <div className="max-w-full mx-auto md:grid md:gap-14 md:grid-cols-3">
@@ -98,7 +105,8 @@ operators in the various market systems and guarantee returns on the investment
                   className="w-full bg-[#F2F2F2] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                 ></textarea>
               </div>
-              <div>
+              {/* Remove the 5+7 math challenge */}
+              {/* <div>
                 <div className="flex items-center gap-2">
                   <span className="text-gray-700">5 +7 = ?</span>
                   <input 
@@ -106,6 +114,14 @@ operators in the various market systems and guarantee returns on the investment
                     className="w-20 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                   />
                 </div>
+              </div> */}
+
+              {/* Add reCAPTCHA */}
+              <div>
+                <ReCAPTCHA
+                  sitekey="6LeX1ZQrAAAAAKH8l6nP2OSN-GdEynMcPt38RMSQ" // <-- Put your frontend site key here
+                  onChange={handleRecaptcha}
+                />
               </div>
 
               <div className="flex flex-wrap justify-center gap-6 pt-4">
@@ -124,3 +140,9 @@ operators in the various market systems and guarantee returns on the investment
 };
 
 export default Welcome;
+import ReCAPTCHA from 'react-google-recaptcha';
+
+<ReCAPTCHA
+  sitekey="YOUR_SITE_KEY" // Replace with your checkbox site key
+  onChange={handleRecaptcha}
+/>
