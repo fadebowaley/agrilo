@@ -4,7 +4,7 @@ import gardener from "../assets/gardener.png";
 function WhyChooseUs(){
     return (
         <>
-        <div className="lg:px-40 flex flex-col gap-10 lg:gap-0  justify-center items-center lg:flex-row">
+        <div className="lg:px-40 flex flex-col gap-10 lg:gap-0 py-10 justify-center items-center lg:flex-row">
           <div className="p-4 font-['Roboto']">
       <h2 className="font-[1000] text-4xl">
             <span className="inline-block border-b border-b-[#1fa12e] border-b-[4px] pb-2">

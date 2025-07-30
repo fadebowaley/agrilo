@@ -1,24 +1,21 @@
 import TeamGrid from '../components/TeamGrid'
-import Navigation from '../components/Navigation'
+import MainNav from '../components/MainNav'
+import Hero from '../components/Hero'
 import Footer from '../components/Footer'
 import Partners from '../components/Partners'
+
 function TeamMembers(){
     return(
         <>
-        <header>
-            <nav className="fixed top-0 right-0 left-0 z-[9999]">
-              <Navigation />
-              </nav>
-            </header> 
-        <section className="mt-37 md:mt-70 lg:mt-45 bg-[#f2f2f2]">
-<TeamGrid />
+        <MainNav />
+        <Hero title="Our Team" bgImage="/images/hero/blog.jpg" />
+        <section className="bg-[#f2f2f2]">
+            <TeamGrid />
         </section>
         <section>
             <Partners />
         </section>
-        <footer className="">
         <Footer />
-        </footer>
         </>
     )
 }

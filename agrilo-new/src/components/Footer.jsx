@@ -1,6 +1,7 @@
 import React from "react";
 import {FaFacebookF, FaTwitter, FaGooglePlusG, FaPinterestP, FaInstagram} from "react-icons/fa"; // Import any specific icons if needed
 import { GrSend } from "react-icons/gr";
+import {Link} from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -39,11 +40,11 @@ const Footer = () => {
           <h3 className="text-xl font-bold mb-4 font-[Poppins] text-[24px] text-white">Quick Links</h3>
           <div className="w-1/3 h-[3px] bg-green-600 rounded-md mb-4"/>
           <ul className="space-y-2">
-            <li><a href="#" className="text-sm hover:text-green-600">About us</a></li>
-            <li><a href="#" className="text-sm hover:text-green-600">Our Team</a></li>
-            <li><a href="#" className="text-sm hover:text-green-600">Featured Project</a></li>
-            <li><a href="#" className="text-sm hover:text-green-600">Services</a></li>
-            <li><a href="#" className="text-sm hover:text-green-600">Contact Us</a></li>
+            <li><Link to="/about" className="text-sm hover:text-green-600">About us</Link></li>
+            <li><Link to="/teamMembers" className="text-sm hover:text-green-600">Our Team</Link></li>
+            <li><Link to="/blogs" className="text-sm hover:text-green-600">Featured Project</Link></li>
+            <li><Link to="/services" className="text-sm hover:text-green-600">Services</Link></li>
+            <li><Link to="/contact" className="text-sm hover:text-green-600">Contact Us</Link></li>
           </ul>
         </div>
         

@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 
 import { useParams } from "react-router-dom";
 import teamData from '../components/TeamData'; // Adjust path as needed
-import Hero from "../components/AboutHero";
+import Hero from "../components/Hero";
 
 function TeamProfile() {
   const { name } = useParams(); // e.g., 'robert-smith'
@@ -27,7 +27,8 @@ function TeamProfile() {
               </nav>
             </header>
       <div className="relative mt-37 sm:mt-72 md:mt-50">
-        <Hero />
+        <Hero title="Our Team" bgImage="/images/hero/blog.jpg" />
+
         <h1 className="absolute top-[20%] p-4 text-white text-5xl font-[800]">
           {member.name}
         </h1>

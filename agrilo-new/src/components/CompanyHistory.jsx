@@ -5,7 +5,7 @@ import front_image from "../assets/about-img-1.jpg";
 function CompanyHistory() {
   return (
     <>
-      <div className="w-full lg:gap-2 max-w-[1200px] px-6 mx-auto flex flex-col lg:flex-row gap-12 items-center lg:items-start">
+      <div className="w-full lg:gap-2 max-w-[1200px] px-6 mx-auto flex flex-col lg:flex-row gap-12 items-center lg:items-start py-15">
         
         {/* IMAGE SECTION */}
         <div className="flex-1 relative max-w-[470px] w-full">

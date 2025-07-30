@@ -8,26 +8,34 @@ const slides = [
   {
     id: 1,
     title: "First Impressions Matter",
+    title2: "Sustainable market-driven solutions",
     image: "/slides1.jpg",
     description: "Trust The Grounds Guys professionals to take care of your commercial or residential grounds",
+    description2: "We offer Smart Solutions to improve the marker"
   },
   {
     id: 2,
     title: "First Impressions Matter",
+    title2: "Value Chain and Market Development",
     image: "/slides2.jpg",
     description: "Trust The Grounds Guys professionals to take care of your commercial or residential grounds",
+    description2: "We partner with Institution, local, and international investors entering the Nigerian, Ecowas, and African Agribusiness"
   },
   {
     id: 3,
     title: "First Impressions Matter",
+    title2: "Development of Business Cases & Sectoral opportunities",
     image: "/slides3.jpg",
     description: "Trust The Grounds Guys professionals to take care of your commercial or residential grounds",
+    description2: "We offer policy analysis, market systems research, feasibility and business planning"
   },
   {
     id: 4,
     title: "First Impressions Matter",
+    title2: "Agricultural Advisory Services",
     image: "/slides4.jpg",
     description: "Trust The Grounds Guys professionals to take care of your commercial or residential grounds",
+    description2: "We offer market systems research, feasibility, and business advisories"
   },
 ];
 
@@ -58,16 +66,27 @@ export default function Slides() {
 
               {/* Overlayed Text */}
               <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white text-center px-4 swiper-fade-text z-10">
-                <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-200 via-green-500 to-green-200 bg-clip-text text-transparent">
+                {/* Mobile Title and Description */}
+                <h2 className="text-5xl md:hidden font-bold mb-8 bg-gradient-to-r from-green-200 via-green-500 to-green-200 bg-clip-text text-transparent">
+                  {slide.title2}
+                </h2>
+                <p className="text-lg md:hidden mb-4 animate-description">
+                  {slide.description2}
+                </p>
+
+                {/* Desktop Title2 and Description2 */}
+                <h2 className="hidden md:block text-6xl font-bold mb-6 bg-gradient-to-r from-green-200 via-green-500 to-green-200 bg-clip-text text-transparent animate-title">
                   {slide.title}
                 </h2>
-                <p className="text-base md:text-lg mb-4 animate-description">
+                <p className="hidden md:block text-xl mb-4 animate-description">
                   {slide.description}
                 </p>
-                <button className="bg-green-700 text-white px-6 py-2 rounded mt-4 font-medium animate-button hover:bg-green-800 transition-all duration-300">
+
+                <button className="bg-green-700 text-xl text-white px-6 py-2 rounded-md mt-10 font-medium animate-button hover:bg-green-800 transition-all duration-300">
                   Read More
                 </button>
               </div>
+
             </div>
           </SwiperSlide>
         ))}

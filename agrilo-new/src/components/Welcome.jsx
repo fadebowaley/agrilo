@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { FaDownload, FaBookOpen, FaPaperPlane } from 'react-icons/fa';
 
 const Welcome = () => {
@@ -13,10 +14,13 @@ const Welcome = () => {
                 className="w-full h-full object-contain rounded-xl mb-5"
             />
             <div className="flex flex-wrap justify-center gap-6 mb-16">
-                <button className="flex items-center gap-2 bg-[#71B16C] hover:bg-[#71C16d] text-white px-6 py-3 rounded-md transition-colors">
-                    <FaBookOpen />
-                    Book Consultation
-                </button>
+              <Link to='/book-consultation'
+                className="flex justify-center items-center gap-4 bg-[#71B16C] hover:bg-[#71C16d] text-white px-6 py-3 rounded-md transition-colors"
+              >
+                <FaBookOpen />
+                Book Consultation
+              </Link>
+               
             </div>
         </div>
 
