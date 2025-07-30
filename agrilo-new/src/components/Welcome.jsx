@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 import { FaDownload, FaBookOpen, FaPaperPlane } from 'react-icons/fa';
 import ReCAPTCHA from 'react-google-recaptcha'; // <-- Add this import
 
 const Welcome = () => {
-  // Optionally, handle reCAPTCHA value
+  const [recaptchaToken, setRecaptchaToken] = useState('');
+
   const handleRecaptcha = (value) => {
-    // You can send this value to your backend for verification
-    console.log("reCAPTCHA value:", value);
+    setRecaptchaToken(value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Collect other form data as needed
+    const formData = {
+      recaptchaToken,
+      // ...other fields
+    };
+    try {
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      // Handle result (show success/error message)
+      console.log(result);
+    } catch (err) {
+      // Handle error
+      console.error(err);
+    }
   };
 
   return (
@@ -76,7 +98,7 @@ operators in the various market systems and guarantee returns on the investment
           <div className="w-full mx-auto bg-gray-50 p-8 rounded-lg shadow-sm">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Request a Quote</h2>
             
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <input 
                   type="text" 
@@ -105,16 +127,7 @@ operators in the various market systems and guarantee returns on the investment
                   className="w-full bg-[#F2F2F2] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                 ></textarea>
               </div>
-              {/* Remove the 5+7 math challenge */}
-              {/* <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-700">5 +7 = ?</span>
-                  <input 
-                    type="text" 
-                    className="w-20 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                </div>
-              </div> */}
+              
 
               {/* Add reCAPTCHA */}
               <div>
@@ -140,9 +153,3 @@ operators in the various market systems and guarantee returns on the investment
 };
 
 export default Welcome;
-import ReCAPTCHA from 'react-google-recaptcha';
-
-<ReCAPTCHA
-  sitekey="YOUR_SITE_KEY" // Replace with your checkbox site key
-  onChange={handleRecaptcha}
-/>
