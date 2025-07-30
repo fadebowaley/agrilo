@@ -35,10 +35,23 @@ const Welcome = () => {
             {/* Description Section */}
             <div className="mb-4 text-gray-400 leading-loose text-sm space-y-4 max-w-4xl mx-auto">
                 <p>
-                    Our team of experts have in the last 15 years worked in the International Development sector in Nigeria and Africa delivering results and creating value for stakeholders in the agribusiness sector. For a long time, the Nigerian economy has been driven (and is still driven) by Oil and Gas with little improvements on the non-oil sectors, especially agriculture.
+                    We are an agricultural advisory services provision consulting firm. Our team of
+experts have in the last 15 years worked in the International Development sector in
+Nigeria and Africa delivering results and creating value for stake-holders in the
+agribusiness sector. For a long time, the Nigerian economy has been driven (and is
+still driven) by Oil and Gas with little improvements on the non-oil sectors, especially
+agriculture.
                 </p>
                 <p>
-                    We help private individuals, institutional, local and international investors seeking to play in the Nigerian Agribusiness sector with expert advisory, policy analysis, ensuring good return on investment.
+                    Nigerian Agriculture comprises mainly of 4 key sectors Crop Production, Livestock,
+Fisheries and Forestry with crop production representing about 88.6% and the rest
+put together sharing 11.4%. Sadly, over 50% of the harvest from crop production is
+lost due to a myriad of challenges and results in a huge economic loss to all actors in
+the sector. The nation loses a lot of revenue in potential taxes and is unable to collect
+same from actors because there is no structure on ground to make this a win-win for
+all. We believe that any investment in the agribusiness sector should create value,
+improve livelihoods, develop local economies via provision of services by local
+operators in the various market systems and guarantee returns on the investment
                 </p>
             </div>
 
