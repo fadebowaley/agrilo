@@ -37,12 +37,12 @@ function TeamGrid() {
     );
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      next();
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [cardsPerView]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     next();
+  //   }, 4000);
+  //   return () => clearInterval(interval);
+  // }, [cardsPerView]);
 
   const getVisibleItems = () => {
     const items = [];

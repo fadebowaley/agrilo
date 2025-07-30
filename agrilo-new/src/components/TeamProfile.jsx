@@ -58,19 +58,19 @@ function TeamProfile() {
           <div>
             <p className="flex gap-3 items-center pb-3">
               <i className="fa fa-map-marker-alt text-[#1fa12e]"></i>
-              <span className="opacity-[0.8]">Los Angeles</span>
+              <span className="opacity-[0.8]">{member.location}</span>
             </p>
             <p className="flex gap-3 items-center pb-3">
               <i className="fa fa-phone text-[#1fa12e]"></i>
-              <span className="opacity-[0.8]">+00123456789</span>
+              <span className="opacity-[0.8]">{member.phoneNumber}</span>
             </p>
             <p className="flex gap-3 items-center pb-3">
               <i className="far fa-envelope text-[#1fa12e]"></i>
-              <span className="opacity-[0.8]">alenaa@greenova.com</span>
+              <span className="opacity-[0.8]">{member.mail}</span>
             </p>
             <p className="flex gap-3 items-center">
               <i className="fa fa-phone text-[#1fa12e]"></i>
-              <span className="opacity-[0.8]">+00123456789</span>
+              <span className="opacity-[0.8]">{member.workNumber}</span>
             </p>
           </div>
         </div>
@@ -80,8 +80,9 @@ function TeamProfile() {
           </h2>
           <h3 className="text-2xl font-[600] opacity-[0.9]">
             <span className="border-b border-b-[4px] pb-2 border-b-[#1fa12e]">
-              {member.role}
+              {member.role.slice(0,3)}
             </span>
+            <span>{member.role.slice(3)}</span>
           </h3>
           <p className="mt-10 opacity-[0.7] text-[15px] md:text-[14px]">
             {member.description}

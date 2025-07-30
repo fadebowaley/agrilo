@@ -1,24 +1,3 @@
-// // src/teamData.js
-
-// import Robert from "../assets/robert.png";
-// import Maria from "../assets/maria.png";
-// import David from "../assets/david.png";
-// import Queensland from "../assets/queensland.png";
-// import Steven from "../assets/steven.png";
-
-// const teamData = [
-//   { name: "Robert Smith", role: "Harvester", img: Robert, link: "/team/robert-smith" },
-//   { name: "Alena Maria", role: "Planter", img: Maria, link: "/team/alena-maria" },
-//   { name: "David Lee", role: "Harvester", img: David, link: "/team/david-lee" },
-//   { name: "Erina Lee", role: "Planter", img: Maria, link: "/team/erina-lee" },
-//   { name: "Cali Kim", role: "Gardener", img: David, link: "/team/cali-kim" },
-//   { name: "Miss Queensland", role: "Gardener", img: Queensland, link: "/team/miss-queensland" },
-//   { name: "Tomas Mullar", role: "Harvester", img: Robert, link: "/team/tomas-mullar" },
-//   { name: "Mark Steven", role: "Gardener", img: Steven, link: "/team/mark-steven" }
-// ];
-
-// export default teamData;
-// Import images
 import Robert from "../assets/robert.png";
 import Maria from "../assets/maria.png";
 import David from "../assets/david.png";
@@ -37,6 +16,10 @@ const teamData = [
   {
     name: "Robert Smith",
     role: "Harvester",
+    location:"Los Angeles",
+    mail:"smith@greenova.com",
+     phoneNumber:+23412897667,
+    workNumber:+243569080986,
     img: Robert,
     link: "/team/robert-smith",
     description: roleDescriptions["Harvester"].replace("[Name]", "Robert Smith")
@@ -44,6 +27,10 @@ const teamData = [
   {
     name: "Alena Maria",
     role: "Planter",
+    location:"Manchester",
+     phoneNumber:+23242357667,
+    workNumber:+244567890986,
+    mail:"maria@greenova.com",
     img: Maria,
     link: "/team/alena-maria",
     description: roleDescriptions["Planter"].replace("[Name]", "Alena Maria")
@@ -51,7 +38,11 @@ const teamData = [
   {
     name: "David Lee",
     role: "Harvester",
+     phoneNumber:+232372357667,
+    workNumber:+223467890986,
+    mail:"david@greenova.com",
     img: David,
+    location:"Washington",
     link: "/team/david-lee",
     description: roleDescriptions["Harvester"].replace("[Name]", "David Lee")
   },
@@ -59,6 +50,10 @@ const teamData = [
     name: "Erina Lee",
     role: "Planter",
     img: Maria,
+    mail:"erina@greenova.com",
+     phoneNumber:+23445357667,
+    workNumber:+243598090986,
+    location:"Tokyo",
     link: "/team/erina-lee",
     description: roleDescriptions["Planter"].replace("[Name]", "Erina Lee")
   },
@@ -66,27 +61,43 @@ const teamData = [
     name: "Cali Kim",
     role: "Gardener",
     img: David,
+    mail:"cali@greenova.com",
+    location:"Seoul",
+     phoneNumber:+23435657667,
+    workNumber:+243560360986,
     link: "/team/cali-kim",
     description: roleDescriptions["Gardener"].replace("[Name]", "Cali Kim")
   },
   {
     name: "Miss Queensland",
     role: "Gardener",
+    mail:"queensland@greenova.com",
+    location:"North california",
     img: Queensland,
     link: "/team/miss-queensland",
+     phoneNumber:+2361238967,
+    workNumber:+24357890986,
     description: roleDescriptions["Gardener"].replace("[Name]", "Miss Queensland")
   },
   {
     name: "Tomas Mullar",
     role: "Harvester",
+    location:"Germany",
+    mail:"mullar@greenova.com",
     img: Robert,
+     phoneNumber:+23435457667,
+    workNumber:+244757890986,
     link: "/team/tomas-mullar",
     description: roleDescriptions["Harvester"].replace("[Name]", "Tomas Mullar")
   },
   {
     name: "Mark Steven",
     role: "Gardener",
+    mail:"steven@greenova.com",
+    location:"England",
     img: Steven,
+    phoneNumber:+23412357667,
+    workNumber:+243567890986,
     link: "/team/mark-steven",
     description: roleDescriptions["Gardener"].replace("[Name]", "Mark Steven")
   }
