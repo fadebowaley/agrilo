@@ -8,7 +8,7 @@ import TeamSocial from "../components/TeamSocial";
 function TeamGrid() {
   const [index, setIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(visibleCount());
-
+  
   // Function to determine visible cards based on window width
   function visibleCount() {
     if (window.innerWidth >= 1024) return 4;

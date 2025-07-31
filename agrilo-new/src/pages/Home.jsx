@@ -69,11 +69,11 @@ function Home() {
           
           <Map />
         </motion.div>
-
+<section className="bg-white pb-15" id="LogoGrid">
         <motion.div variants={fadeInUp}>
           <LogoGrid/>
         </motion.div>
-
+ </section>
         <motion.div variants={fadeInUp}>
           <Footer />
         </motion.div>
