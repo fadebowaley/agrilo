@@ -20,6 +20,7 @@ function Layout() {
   return (
     <>
       <div className="">
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/leadership" element={<Leadership />} />

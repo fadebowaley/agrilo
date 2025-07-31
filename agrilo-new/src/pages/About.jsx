@@ -5,7 +5,7 @@ import CompanyHistory from '../components/CompanyHistory';
 import Cta from '../components/Cta';
 import Hero from "../components/Hero";
 import MainNav from "../components/MainNav";
-
+import Banner from "../components/Banner";
 function About() {
   return (
     <>
@@ -16,7 +16,9 @@ function About() {
     </section>
     <section className="">
       <WhyChooseUs />
-      <Cta />
+      <div className="mb-7">
+      <Banner />
+      </div>
     </section>
     <footer>
       <Footer />
