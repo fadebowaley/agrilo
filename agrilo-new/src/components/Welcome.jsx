@@ -1,8 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 import { FaDownload, FaBookOpen, FaPaperPlane } from 'react-icons/fa';
+import ReCAPTCHA from 'react-google-recaptcha'; // <-- Add this import
 
 const Welcome = () => {
+  const [recaptchaToken, setRecaptchaToken] = useState('');
+
+  const handleRecaptcha = (value) => {
+    setRecaptchaToken(value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Collect other form data as needed
+    const formData = {
+      recaptchaToken,
+      // ...other fields
+    };
+    try {
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      // Handle result (show success/error message)
+      console.log(result);
+    } catch (err) {
+      // Handle error
+      console.error(err);
+    }
+  };
+
   return (
     <section className="py-16 px-10 font-[Roboto] bg-[#F2F2F2]">
       <div className="max-w-full mx-auto md:grid md:gap-14 md:grid-cols-3">
@@ -35,10 +64,23 @@ const Welcome = () => {
             {/* Description Section */}
             <div className="mb-4 text-gray-400 leading-loose text-sm space-y-4 max-w-4xl mx-auto">
                 <p>
-                    Our team of experts have in the last 15 years worked in the International Development sector in Nigeria and Africa delivering results and creating value for stakeholders in the agribusiness sector. For a long time, the Nigerian economy has been driven (and is still driven) by Oil and Gas with little improvements on the non-oil sectors, especially agriculture.
+                    We are an agricultural advisory services provision consulting firm. Our team of
+experts have in the last 15 years worked in the International Development sector in
+Nigeria and Africa delivering results and creating value for stake-holders in the
+agribusiness sector. For a long time, the Nigerian economy has been driven (and is
+still driven) by Oil and Gas with little improvements on the non-oil sectors, especially
+agriculture.
                 </p>
                 <p>
-                    We help private individuals, institutional, local and international investors seeking to play in the Nigerian Agribusiness sector with expert advisory, policy analysis, ensuring good return on investment.
+                    Nigerian Agriculture comprises mainly of 4 key sectors Crop Production, Livestock,
+Fisheries and Forestry with crop production representing about 88.6% and the rest
+put together sharing 11.4%. Sadly, over 50% of the harvest from crop production is
+lost due to a myriad of challenges and results in a huge economic loss to all actors in
+the sector. The nation loses a lot of revenue in potential taxes and is unable to collect
+same from actors because there is no structure on ground to make this a win-win for
+all. We believe that any investment in the agribusiness sector should create value,
+improve livelihoods, develop local economies via provision of services by local
+operators in the various market systems and guarantee returns on the investment
                 </p>
             </div>
 
@@ -56,7 +98,7 @@ const Welcome = () => {
           <div className="w-full mx-auto bg-gray-50 p-8 rounded-lg shadow-sm">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Request a Quote</h2>
             
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <input 
                   type="text" 
@@ -85,14 +127,14 @@ const Welcome = () => {
                   className="w-full bg-[#F2F2F2] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                 ></textarea>
               </div>
+              
+
+              {/* Add reCAPTCHA */}
               <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-700">5 +7 = ?</span>
-                  <input 
-                    type="text" 
-                    className="w-20 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                </div>
+                <ReCAPTCHA
+                  sitekey="6LeX1ZQrAAAAAKH8l6nP2OSN-GdEynMcPt38RMSQ" // <-- Put your frontend site key here
+                  onChange={handleRecaptcha}
+                />
               </div>
 
               <div className="flex flex-wrap justify-center gap-6 pt-4">
