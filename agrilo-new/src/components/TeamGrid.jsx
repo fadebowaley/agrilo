@@ -8,7 +8,7 @@ import TeamSocial from "../components/TeamSocial";
 function TeamGrid() {
   const [index, setIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(visibleCount());
-
+  
   // Function to determine visible cards based on window width
   function visibleCount() {
     if (window.innerWidth >= 1024) return 4;
@@ -37,12 +37,12 @@ function TeamGrid() {
     );
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      next();
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [cardsPerView]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     next();
+  //   }, 4000);
+  //   return () => clearInterval(interval);
+  // }, [cardsPerView]);
 
   const getVisibleItems = () => {
     const items = [];
@@ -54,9 +54,7 @@ function TeamGrid() {
   };
 
   return (
-    <div className="flex flex-col items-center p-4 relative">
-      <p className="text-xl text-[#1fa12e] font-[400]">Our Dedicated Team</p>
-      <h3 className="font-bold text-3xl pt-2 mb-8">Hard Working People</h3>
+    <div className="flex flex-col items-center p-4 pt-15 relative">
 
       <button
         onClick={prev}

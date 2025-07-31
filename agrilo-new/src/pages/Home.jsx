@@ -7,6 +7,7 @@ import Team from "../components/Team";
 import Project from "../components/Project";
 import BlogSection from "../components/Blog";
 import Map from "../components/map";
+import LogoGrid from "../components/Logos";
 import Footer from "../components/Footer";
 
 // Parent container variant
@@ -68,7 +69,11 @@ function Home() {
           
           <Map />
         </motion.div>
-
+<section className="bg-white pb-15" id="LogoGrid">
+        <motion.div variants={fadeInUp}>
+          <LogoGrid/>
+        </motion.div>
+ </section>
         <motion.div variants={fadeInUp}>
           <Footer />
         </motion.div>
