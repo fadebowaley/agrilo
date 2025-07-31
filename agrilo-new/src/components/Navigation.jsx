@@ -22,14 +22,14 @@ const menuItems = [
     children: [
       { label: "About us", href: "/about" },
       { label: "The Leadership", href: "/leadership" },
-      { label: "Our Team", href: "/team" },
+      { label: "Partners", href: "/patners" },
     ],
   },
   {
     label: "OUR SERVICES",
     children: [
       { label: "What we Offer", href: "/services" },
-      { label: "Investment", href: "/investment" },
+      { label: "Jobs Done", href: "/jobs-done" },
     ],
   },
   {

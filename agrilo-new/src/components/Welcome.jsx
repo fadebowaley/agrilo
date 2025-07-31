@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 import { FaDownload, FaBookOpen, FaPaperPlane } from 'react-icons/fa';
+import QuoteForm from '../components/QuoteForm';
 import ReCAPTCHA from 'react-google-recaptcha'; // <-- Add this import
 
 const Welcome = () => {
@@ -12,7 +13,6 @@ const Welcome = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Collect other form data as needed
     const formData = {
       recaptchaToken,
       // ...other fields
@@ -94,59 +94,9 @@ operators in the various market systems and guarantee returns on the investment
         </div>
         
         {/* Request a Quote Form */}
-        <div className='w-full flex mb-12'>
-          <div className="w-full mx-auto bg-gray-50 p-8 rounded-lg shadow-sm">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Request a Quote</h2>
-            
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              <div>
-                <input 
-                  type="text" 
-                  placeholder="Name" 
-                  className="w-full px-4 py-2 bg-[#F2F2F2] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                />
-              </div>
-              <div>
-                <input 
-                  type="email" 
-                  placeholder="Email" 
-                  className="w-full bg-[#F2F2F2] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                />
-              </div>
-              <div>
-                <input 
-                  type="text" 
-                  placeholder="Subject" 
-                  className="w-full bg-[#F2F2F2] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                />
-              </div>
-              <div>
-                <textarea 
-                  placeholder="Message" 
-                  rows="4"
-                  className="w-full bg-[#F2F2F2] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                ></textarea>
-              </div>
-              
-
-              {/* Add reCAPTCHA */}
-              <div>
-                <ReCAPTCHA
-                  sitekey="6LeX1ZQrAAAAAKH8l6nP2OSN-GdEynMcPt38RMSQ" // <-- Put your frontend site key here
-                  onChange={handleRecaptcha}
-                />
-              </div>
-
-              <div className="flex flex-wrap justify-center gap-6 pt-4">
-                <button className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors">
-                  <FaPaperPlane />
-                  SUBMIT
-                </button>
-              </div>
-            </form>
-          </div>
+        <div className="w-full flex mb-12">
+          <QuoteForm />
         </div>
-
       </div>
     </section>
   );

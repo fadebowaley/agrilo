@@ -22,7 +22,7 @@ const MainNav = () => {
       dropdown: [
         { name: 'About us', path: '/about' },
         { name: 'Leadership', path: '/leadership' },
-        { name: 'Team', path: '/team' }
+        { name: 'Partners', path: '/patners' }
       ] 
     },
     { 
@@ -30,7 +30,7 @@ const MainNav = () => {
       path: '/services',
       dropdown: [
         { name: 'What we offer', path: '/services/what-we-offer' },
-        { name: 'Investments', path: '/services/investments' }
+        { name: 'Jobs Done', path: '/jobs-done' }
       ] 
     },
     { 

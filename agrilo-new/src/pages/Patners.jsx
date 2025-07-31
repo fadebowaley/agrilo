@@ -4,14 +4,14 @@ import Hero from '../components/Hero'
 import Footer from '../components/Footer'
 import Partners from '../components/Partners'
 
-function TeamMembers(){
+function Patners(){
     return(
         <>
         <MainNav />
-        <Hero title="Our Team" bgImage="/images/hero/blog.jpg" />
-        <section className="bg-[#f2f2f2]">
+        <Hero title="Our Patners" bgImage="/images/hero/blog.jpg" />
+        {/* <section className="bg-[#f2f2f2]">
             <TeamGrid />
-        </section>
+        </section> */}
         <section>
             <Partners />
         </section>
@@ -19,4 +19,4 @@ function TeamMembers(){
         </>
     )
 }
-export default TeamMembers
+export default Patners

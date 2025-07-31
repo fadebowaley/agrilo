@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import ProjectList from '../components/ProjectList'; // <-- use the correct path
 
-function Investments() {
+function JobsDone() {
     return (
         <>
             <MainNav />
@@ -26,4 +26,4 @@ function Investments() {
     );
 }
 
-export default Investments;
+export default JobsDone;
