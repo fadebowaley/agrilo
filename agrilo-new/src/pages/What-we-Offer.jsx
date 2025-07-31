@@ -7,11 +7,12 @@ import Footer from '../components/Footer';
 
 function WhatWeOffer() {
     const offers = [
-        'Agricultural Policy Advisory',
+        'Agricultural Advisory',
+        'Agro-Tourism',
+        'Commodity Training',
         'Value Chain Development',
-        'Feasibility Studies',
-        'Training & Capacity Building',
-        'Agri-Investment Facilitation'
+        'Training Provision',
+        'Renewable Energy,Environment & Waste Management',
     ];
 
     return(
