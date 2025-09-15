@@ -16,6 +16,7 @@ import ScrollToTop from './components/ScrollToTop';
 import TeamGrid from './components/TeamGrid';
 // import RobertProfile from './components/RobertProfile';
 import TeamProfile from './components/TeamProfile';
+// import BlogDetails from "./pages/BlogDetails";
 function Layout() {
   return (
     <>
@@ -36,7 +37,9 @@ function Layout() {
           <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/blogs" element={<Blog />} />
           <Route path="/book-consultation" element={<BookConsulation />} />
+          {/* <Route path="/blogs/:slug" element={<BlogDetails />} /> */}
         </Routes>
+     
       </div>
     </>
   );
