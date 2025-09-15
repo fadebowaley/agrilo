@@ -1,94 +1,60 @@
-import React from "react";
-import {Link} from 'react-router-dom';
-
-const blogPosts = [
-  {
-    title: "Business Elites Africa Magazine Unveils Africa’s 30 Most Influential Executives of 2023",
-    description: "Business Elites Africa Magazine Unveils Africa’s 30 Most Influential Executives of 2023",
-    date: "August 10, 2023",
-    // extra: { heading: "FATIGATED BETWEEN US" },
-    bgColor: "white",
-    borderColor: "border-green-100",
-    textColor: "black",
-    image: "/blog1.jpeg", // Replace with your actual image path
-  },
-  {
-    title: "Floods threaten Nigeria’s rice output",
-    description: `Nigeria’s Minister for Agriculture and Rural Development, Audu Ogbeh says the country plans to stop the importation of rice by`,
-    date: "August 8, 2023",
-    image: "/blog2.png",
-  },
-  {
-    title: "AGRICULTURE: Nigeria, Netherlands’ institution’s partner on crop cultivation techniques",
-    description: `Nigeria and the Netherlands’ institutions have signed a memorandum of understanding to enhance the exchange of knowledge for protective vegetable`,
-    date: "April 7, 2022",
-    image: "/blog3.jpg",
-  },
-  {
-    title: "Nigeria's journey to self-sufficiency in rice production",
-    description: `Nigeria in recent times has made moves to attain self-sufficiency in rice production, Richard Ogundele, Founder and CEO JMSF Agribusiness`,
-    date: "March 6, 2022",
-    image: "/blog4.png",
-  },
-];
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { getBlogPosts } from "../services/contentful";
+import { formatDate } from "../utils/contentfulRenderer";
 
 const BlogCard = ({
   title,
-  date,
-  description,
-  extra,
+  publishDate,
+  excerpt,
+  slug,
+  featuredImage,
   category,
-  link = "#",
-  bgColor = "bg-white",
-  borderColor = "border-gray-100",
-  textColor = "text-gray-800",
-  image,
 }) => {
   return (
-    <div className={`${bgColor} rounded-lg shadow-sm border ${borderColor} overflow-hidden`}>
+    <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <div className="overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-48 object-cover transform transition-transform duration-300 hover:scale-105"
-        />
+        <Link to={`/blog/${slug}`}>
+          <img
+            src={
+              featuredImage
+                ? featuredImage.startsWith("//")
+                  ? `https:${featuredImage}`
+                  : featuredImage
+                : "/blog1.jpeg"
+            }
+            alt={title}
+            className="w-full h-48 object-cover transform transition-transform duration-300 hover:scale-105"
+          />
+        </Link>
       </div>
       <div className="p-6">
-        {title && (
-          <h3 className={`font-bold text-2xl mb-3`}>{title}</h3>
+        <Link to={`/blog/${slug}`}>
+          <h3 className="font-bold text-lg mb-3 hover:text-green-600 transition-colors cursor-pointer line-clamp-2">
+            {title}
+          </h3>
+        </Link>
+
+        {category && (
+          <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mb-3">
+            {category.name}
+          </span>
         )}
 
-        {Array.isArray(description) ? (
-          <ul className="mt-2 space-y-1 italic text-green-700">
-            {description.map((line, idx) => (
-              <li key={idx}>"{line}"</li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-gray-600 mb-4">{description}</p>
-        )}
+        <p className="text-gray-600 mb-4 line-clamp-3 text-sm leading-relaxed">
+          {excerpt}
+        </p>
 
-        {date && <div className="text-sm text-gray-500 mb-2">{date}</div>}
+        <div className="text-sm text-gray-500 mb-4">
+          {formatDate(publishDate)}
+        </div>
 
-        {extra && (
-          <>
-            <h4 className="font-semibold text-green-700 mb-2">
-              {extra.heading}
-            </h4>
-            <p className="text-gray-600">{extra.text}</p>
-            {extra.date && (
-              <div className="text-sm text-gray-500 mt-2">{extra.date}</div>
-            )}
-          </>
-        )}
-
-        <div className="mt-4 pt-4 border-t border-gray-200">
-          <a
-            href={link}
-            className="text-green-600 hover:text-green-800 text-sm font-medium"
-          >
+        <div className="pt-4 border-t border-gray-200">
+          <Link
+            to={`/blog/${slug}`}
+            className="text-green-600 hover:text-green-800 text-sm font-medium transition-colors">
             Read more →
-          </a>
+          </Link>
         </div>
       </div>
     </div>
@@ -96,6 +62,53 @@ const BlogCard = ({
 };
 
 const BlogSection = () => {
+  const [blogPosts, setBlogPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadBlogPosts = async () => {
+      try {
+        const posts = await getBlogPosts(4); // Get 4 posts for homepage
+        setBlogPosts(posts);
+      } catch (error) {
+        console.error("Error loading blog posts:", error);
+        // Fallback posts will be returned by the service
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadBlogPosts();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">
+            Our Blogs
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                <div className="animate-pulse">
+                  <div className="h-48 bg-gray-300"></div>
+                  <div className="p-6 space-y-4">
+                    <div className="h-4 bg-gray-300 rounded w-3/4"></div>
+                    <div className="h-3 bg-gray-300 rounded w-1/2"></div>
+                    <div className="h-20 bg-gray-300 rounded"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -104,16 +117,15 @@ const BlogSection = () => {
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {blogPosts.map((post, index) => (
-            <BlogCard key={index} {...post} />
+          {blogPosts.map((post) => (
+            <BlogCard key={post.id} {...post} />
           ))}
         </div>
 
         <div className="mt-12 mb-12 text-center">
-          <Link 
-            to='/blogs'
-            className="bg-white text-black border border-green-500 hover:bg-green-600 hover:text-white px-6 py-3 rounded-full font-medium transition-colors"
-          >
+          <Link
+            to="/blogs"
+            className="bg-white text-black border border-green-500 hover:bg-green-600 hover:text-white px-6 py-3 rounded-full font-medium transition-colors">
             VIEW ALL
           </Link>
         </div>

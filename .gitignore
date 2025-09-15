@@ -1,3 +1,6 @@
 node_modules/
 agrilo-new/node_modules/
 node_modules/
+agrilo-new/.env
+agrilo/.env
+agrilo/node_modules/

@@ -10,6 +10,7 @@ import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
 import WhatWeOffer from './pages/What-we-Offer';
 import Blog from './pages/Blog'
+import BlogPost from "./pages/BlogPost";
 import BookConsulation from './pages/Book-Consultation'
 import ScrollToTop from './components/ScrollToTop';
 import TeamGrid from './components/TeamGrid';
@@ -21,7 +22,6 @@ function Layout() {
   return (
     <>
       <div className="">
-        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/leadership" element={<Leadership />} />
@@ -35,6 +35,7 @@ function Layout() {
           <Route path="/jobs-done" element={<JobsDone />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/blogs" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/book-consultation" element={<BookConsulation />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/get-quote" element={<Quote />} />
